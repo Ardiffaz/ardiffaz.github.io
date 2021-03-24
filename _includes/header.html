@@ -22,9 +22,12 @@
         {% assign pages = site.pages | sort:"order" %}
 
         {%- for page in pages -%}
-          {% unless pagesNamesList contains page.title %}
-            <a class="nav__link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
-          {% endunless %}
+          {% if page.title %}
+            {% unless pagesNamesList contains page.title %}
+              <a class="nav__link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+            {% endunless %}
+
+          {% endif %}
 
           {% assign pagesNamesList = page.title | append: pagesNamesList %}
         {%- endfor -%}

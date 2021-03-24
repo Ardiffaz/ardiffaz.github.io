@@ -1,0 +1,30 @@
+<footer class="footer">
+  <div class="wrapper footer__wrapper">
+
+    <nav class="nav footer__nav">
+      <input type="checkbox" id="nav-trigger-bottom" class="nav__trigger" />
+      <label for="nav-trigger-bottom"><span class="nav__icon"></span></label>
+
+      <div class="nav__content nav__content--bottom">
+        {% assign pagesNamesList = "" %}
+        {% assign pages = site.pages | sort:"order" %}
+
+        {%- for page in pages -%}
+          {% unless pagesNamesList contains page.title %}
+            <a class="nav__link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+          {% endunless %}
+
+          {% assign pagesNamesList = page.title | append: pagesNamesList %}
+        {%- endfor -%}
+      </div>
+    </nav>
+
+    <div class="footer__text">
+      Made by Ardiffaz.<br />
+      Since 2020
+    </div>
+
+
+  </div>
+
+</footer>

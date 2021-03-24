@@ -1,0 +1,34 @@
+<header class="header">
+
+  <div class="header__title">
+    <div class="header__title-content">
+      {% if page.url == "/" %}
+        <div class="header__title-link">{{ site.title | escape }}</div>
+      {%else%}
+        <a class="header__title-link" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+      {% endif %}
+
+
+      <div class="header__title-text">Trying to git gud at art</div>
+    </div>
+  </div>
+
+  <div class="header__nav wrapper">
+    <nav class="nav">
+      <input type="checkbox" id="nav-trigger-top" class="nav__trigger" />
+      <label for="nav-trigger-top"><span class="nav__icon"></span></label>
+      <div class="nav__content">
+        {% assign pagesNamesList = "" %}
+        {% assign pages = site.pages | sort:"order" %}
+
+        {%- for page in pages -%}
+          {% unless pagesNamesList contains page.title %}
+            <a class="nav__link" href="{{ page.url | relative_url }}">{{ page.title | escape }}</a>
+          {% endunless %}
+
+          {% assign pagesNamesList = page.title | append: pagesNamesList %}
+        {%- endfor -%}
+      </div>
+    </nav>
+  </div>
+</header>

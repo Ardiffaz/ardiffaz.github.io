@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
+  url('../fonts/Ubuntu-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Light'), local('Ubuntu-Light'),
+  url('../fonts/Ubuntu-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Light Italic'), local('Ubuntu-LightItalic'),
+  url('../fonts/Ubuntu-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'),
+  url('../fonts/Ubuntu-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Italic'), local('Ubuntu-Italic'),
+  url('../fonts/Ubuntu-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+  url('../fonts/Ubuntu-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Bold Italic'), local('Ubuntu-BoldItalic'),
+  url('../fonts/Ubuntu-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Medium Italic'), local('Ubuntu-MediumItalic'),
+  url('../fonts/Ubuntu-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'),
+  url('../fonts/UbuntuCondensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+main {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+li {
+  > ul, > ol {
+    margin-bottom: 0;
+  }
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  cursor: default;
+  line-height: 1.4;
+  font-size: 16px;
+  background-color: $color-dark;
+}
+
+.container{
+  font-family: $font-default;
+  font-size: 16px;
+  line-height: 1.3;
+  color: $color-light;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content{
+  flex-grow: 1;
+  background: url(../26-tr-1.jpg) no-repeat top center fixed;
+  background-size: calc(min(865px, 100%)), calc(min(1000px, 100%));
+  padding: 20px 0;
+}
+
+.wrapper{
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include media-query($desktop) {
+    padding: 0 30px;
+  }
+}
+
+
+a{
+  color: $color-main;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover{
+    color: $color-main-hover;
+    text-decoration: underline;
+  }
+}
+
+
+.header, .footer {
+  flex-shrink: 0;
+  background: $color-darker;
+  padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $font-condensed;
+  font-weight: bold;
+  margin: 0 0 20px;
+  position: relative;
+  overflow: hidden;
+  line-height: 1.2;
+
+  &:not(.noline):after, &:not(.noline).centered:before{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 12px;
+    background: url(../bg.png) repeat-x center center;
+  }
+
+  &:not(.noline):after{
+    margin-right: -100%;
+    margin-left: 12px;
+    border-left: 1px solid $color-accent;
+  }
+
+  &:not(.noline).centered:before{
+    margin-left: -100%;
+    margin-right: 12px;
+    border-right: 1px solid $color-accent;
+  }
+}
+
+
+h1{font-size: 30px;}
+h2{font-size: 26px;}
+h3{font-size: 24px;}
+h4{font-size: 20px;}
+h5{font-size: 18px;}
+h6{font-size: 16px;}
+
+hr{
+  border: none;
+  border-top: 1px solid $color-accent;
+  background: $color-transparent;
+  margin: 40px 0;
+}
+
+.centered{
+  text-align: center;
+}
+
+
+
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}

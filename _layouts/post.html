@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post__header">
+    <h1 class="post__h" itemprop="name headline">{{ page.title | escape }}</h1>
+
+    {% if page.dateCustom %}
+      {% assign date = page.dateCustom %}
+    {% else %}
+      {% assign date = page.date | date_to_long_string %}
+    {% endif %}
+
+    <time class="post__date" datetime="{{ date | date_to_xmlschema }}" itemprop="datePublished">
+      {{ date }}
+    </time>
+
+  </header>
+
+  {% if page.previous.url %}
+    <a href="{{page.previous.url}}" title="Previous page: {{page.previous.title}}" class="arrowlink arrowlink--next">prev</a>
+  {% endif %}
+
+  {% if page.next.url %}
+    <a href="{{page.next.url}}" title="Next page: {{page.next.title}}" class="arrowlink arrowlink--prev">next</a>
+  {% endif %}
+
+
+  <div class="post__descr" itemprop="articleBody">
+
+    {%- if page.img -%}
+      <img src="{{page.img}}" alt="{{page.title | escape}}" class="post__img" />
+    {%- endif -%}
+
+
+    {{ content }}
+  </div>
+  {%comment%}
+    {%- if site.disqus.shortname -%}
+      {%- include disqus_comments.html -%}
+    {%- endif -%}
+  {%endcomment%}
+</article>

@@ -1,0 +1,47 @@
+---
+layout: page
+title: Gallery
+order: 1
+---
+
+{% if site.paginate %}
+{% assign posts = paginator.posts %}
+{% else %}
+{% assign posts = site.posts %}
+{% endif %}
+
+
+{%- if posts.size > 0 -%}
+<ul class="post-list">
+    {%- for post in posts -%}
+    <li class="post-list__item post">
+        <div class="post-item__img-block">
+            <img src="{{ post.preview | relative_url }}" class="post-item__img" alt="{{ post.title | escape }}" />
+        </div>
+        <h3 class="noline post-item__h">
+            <a class="post-item__link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+            </a>
+        </h3>
+        <span class="post-item__date">{{ post.date | date_to_long_string }}</span>
+    </li>
+    {%- endfor -%}
+</ul>
+
+{% if paginator.total_pages > 1 %}
+<ul class="pagination">
+    {%- if paginator.previous_page %}
+        <li class="pagination__item"><a href="{{ paginator.previous_page_path | relative_url }}" class="pagination__link">{{ paginator.previous_page }}</a></li>
+    {%- else %}
+        <li class="pagination__item"><div class="pagination__edge">•</div></li>
+    {%- endif %}
+    <li class="pagination__item"><div class="pagination__current">{{ paginator.page }}</div></li>
+    {%- if paginator.next_page %}
+        <li class="pagination__item"><a href="{{ paginator.next_page_path | relative_url }}" class="pagination__link">{{ paginator.next_page }}</a></li>
+    {%- else %}
+        <li class="pagination__item"><div class="pagination__edge">•</div></li>
+    {%- endif %}
+</ul>
+{%- endif %}
+
+{%- endif -%}

@@ -99,7 +99,6 @@ body {
 }
 
 html {
-  cursor: default;
   line-height: 1.4;
   font-size: 16px;
   background-color: $color-dark;
@@ -117,7 +116,7 @@ html {
 
 .content{
   flex-grow: 1;
-  background: url(../26-tr-1.jpg) no-repeat top center fixed;
+  background: url(../26-tr-1.jpg) no-repeat center -50px fixed;
   background-size: calc(min(865px, 100%)), calc(min(1000px, 100%));
   padding: 20px 0;
 }
@@ -200,7 +199,9 @@ hr{
   text-align: center;
 }
 
-
+p{
+  margin: 0 0 16px;
+}
 
 .svg-icon {
   width: 20px;

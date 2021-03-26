@@ -159,6 +159,14 @@
     font-size: 13px;
     color: $color-accent;
   }
+
+  &__p{
+    margin: 0 0 10px;
+
+    &:last-child{
+      margin: 0;
+    }
+  }
 }
 
 .homepage{
@@ -217,6 +225,7 @@
   &__img{
     max-height: 98vh;
     max-width: 100%;
+    margin-bottom: 20px;
   }
 
   &__header{
@@ -251,12 +260,13 @@
 .arrowlink{
   display: block;
   width: 20px;
+  height: 50vh;
   text-indent: 9999px;
   color: $color-transparent;
   overflow: hidden;
   position: fixed;
   top: 50%;
-  margin-top: -20px;
+  transform: translateY(-50%);
 
   @include media-query($desktop) {
     width: 30px;
@@ -269,7 +279,9 @@
     height: 15px;
     border-top: 2px solid $color-second;
     border-left: 2px solid $color-second;
-    margin-top: 9px;
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
     transition: border-color 0.3s;
 
     @include media-query($desktop) {
@@ -309,6 +321,18 @@
       @include media-query($desktop) {
         margin-left: -3px;
       }
+    }
+  }
+
+  @include media-query(1360px) {
+    &--prev{
+      left: 50%;
+      margin-left: -670px;
+    }
+
+    &--next{
+      right: 50%;
+      margin-right: -670px;
     }
   }
 }

@@ -20,3 +20,15 @@ This is why I created this little webpage. I want to keep track of my progress a
 I know very well that I am only a beginner. Sometimes I fail and maybe I won't even achieve some of this things that I want to achieve.
 
 But I'll keep trying.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+- My [GitHub](https://github.com/Ardiffaz){:target="_blank"}
+
+- [Source code](https://github.com/Ardiffaz/ardiffaz.github.io){:target="_blank"} of this website
+
+- My [Steam](https://steamcommunity.com/id/ardiffaz/){:target="_blank"} account

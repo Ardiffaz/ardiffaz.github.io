@@ -9,9 +9,9 @@ layout: home
     <ul class="post-list">
         {%- for post in site.tags.featured -%}
         <li class="post-list__item post">
-            <div class="post-item__img-block">
+            <a href="{{ post.url | relative_url }}" class="post-item__img-block">
                 <img src="{{ post.preview | relative_url }}" class="post-item__img" alt="{{ post.title | escape }}" />
-            </div>
+            </a>
             <h3 class="noline post-item__h">
                 <a class="post-item__link" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
